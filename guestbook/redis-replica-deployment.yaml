@@ -1,7 +1,7 @@
 apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
 kind: Deployment
 metadata:
-  name: redis-replica
+  name: redis-replicas
 spec:
   selector:
     matchLabels:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: slave
-        image: gcr.io/google_samples/gb-redisslave:v2
+        image: gcr.io/google_samples/gb-redisslave:v1
         resources:
           requests:
             cpu: 100m
